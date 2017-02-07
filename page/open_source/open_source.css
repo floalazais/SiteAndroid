@@ -1,0 +1,48 @@
+.point{
+	margin-bottom:25px;
+}
+
+#opensource{
+	height:272px;
+	width:318px;
+}
+
+.citation{
+	text-align:center;
+}
+
+#linux{
+	height:150px;
+	width:300px;
+	margin-left:50px;
+	margin-right:50px;
+}
+
+.GNU{
+	margin-bottom:20px;
+}
+
+#gapps{
+	height:248px;
+	width:500px;
+}
+
+#oxygenmod{
+	height:248px;
+	width:500px;
+}
+
+#cyanogenmod{
+	height:248px;
+	width:500px;
+}
+
+#opengl{
+	height:248px;
+	width:500px;
+}
+
+#noyau{
+	height:248px;
+	width:500px;
+}

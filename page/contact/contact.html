@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Android - Contact</title>
+		<link rel="stylesheet" href="../../common/common_design.css" />
+		<link rel="stylesheet" href="contact.css" />
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto' rel='stylesheet' type='text/css'>
+		<link rel="icon" href="../../common/common_img/favicon.png" />
+		
+	</head>
+	
+	<body>
+		<div id="header_background">
+			<header>
+				
+				<a href="../../index.html">
+					<img src="../../common/common_img/bugdroid_small.png" alt="bugdroid" class="android_logo" />
+					<img src="../../common/common_img/android.png" alt="android" class="android_name"/>
+				</a>	
+			
+				<nav>
+					<ol>
+						<li><span class="notselect"><a href="../open_source/open_source.html">OPEN SOURCE</a></span></li>
+						<li><span class="notselect">•</span></li>
+						<li><span class="notselect"><a href="../caracteristique/caracteristique.html">CARACTERISTIQUES</a></span></li>
+						<li><span class="notselect">•</span></li>
+						<li><span class="notselect"><a href="../architecture/architecture.html">ARCHITECTURE</a></span></li>
+					</ol>
+				</nav>	
+				
+			</header>
+		</div>
+		
+		<div id="header_space"></div>
+		
+		<section>
+			<p>Dans cette section vous pouvez nous faire parvenir vos conseils ou éventuels rapport d'erreur, merci de bien vouloir préciser le modèle de votre appareil ainsi que la version d'android que vous utilisez</p>
+			
+			<form method="post" action="">
+				<label for="email">Email : </label><input type="email" name="email" id="email" class="boite" required/><br />
+				<label>Raison : </label>
+				<select name="raison">
+					<option value="erreur">Erreur</option>
+					<option value="suggestion">Suggestion</option>
+					<option value="autre">Autre</option>
+				</select><br />
+				<label for="modele">Modèle : </label><input type="text" name="modele" id="modele" class="boite" required/><br/>
+				<label for="sujet">Sujet : </label><input type="text" name="sujet" id="sujet" class="boite" required/><br />
+				<label for="message">Message : </label><br />
+				<textarea name="description" id="message" required></textarea>
+				<div id="boite_bouton">
+					<input type="submit" value="Envoyer" id="boutton" />
+				</div>
+				
+			
+			</form>
+			
+		</section>
+		
+		<div id="background_footer">
+			
+			<footer>
+				<div class="dalle"><a href="../a_propos/a_propos.html">A propos du projet</a></div>
+				<div class="dalle">•</div>
+				<div class="selectbas"><a href="contact.html">Contact</a></div>
+				<div class="dalle">•</div>
+				<div class="dalle"><a href="#">Haut de la page</a></div>
+				<div id="footer_logo"><a href="http://iut.univ-amu.fr/sites/arles"><img src="../../common/common_img/google.png"></a></div>
+			</footer>
+			
+		</div>
+	
+	</body>
+
+</html>

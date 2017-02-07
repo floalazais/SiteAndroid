@@ -1,0 +1,172 @@
+/*l'image d'accueil*/
+
+#contenu_large_background {
+	height : 500px;
+	
+	background-image : url(img/devices.jpg);
+	background-position : 0 -200px;
+	
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5) inset;
+	
+	-webkit-transition : 0.5s ease-in-out;
+	transition : 0.5s ease-in-out;
+}
+
+#contenu_large_background:hover {
+	background-position : 0 -250px;
+}
+
+#contenu_large{
+	height : 600px;
+	min-width : 900px;
+	width : 70%;
+	margin : auto;
+	
+	text-align : justify;
+}
+
+
+#blockdubandeau{
+	height:80px;
+}
+
+#titredubandeau{
+	font-size : 2em;
+	font-weight:bold;
+	color : #6ab344;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+#textedubandeau{
+	margin:0px;
+	padding:0px;
+	text-align : justify;
+}
+
+/*sommaire intro*/
+
+#intro{
+	list-style-type:none;
+	padding-left:0;
+}
+
+#intro li{
+	padding-bottom:5px;
+}
+
+/* ***Animation des versions d'Android*** */
+
+#animation_android {
+	display : flex;
+	height : 500px;
+	min-width : 900px;
+}
+
+#carre1, #carre2, #carre3, #carre4, #carre5, #carre6, #carre7, #carre8, #carre9, #carre10, #carre11 {
+	display : inline-block;
+	height : 500px;
+	flex : 1;
+	overflow : hidden;
+	
+	-webkit-transition : 0.5s ease-in-out;
+	transition : 0.5s ease-in-out;
+}
+
+#carre1 {
+	background : url(img/1.5.png) 60px 20px, 
+	url(img/cupcake.png) -50px 315px;
+	background-size: 70px 100px, 218px 319px;
+	background-repeat : no-repeat;
+	background-color : #009FC6;
+}
+#carre2 {
+	background : url(img/1.6.png) 60px 20px, 
+	url(img/donut.png) -100px 360px;
+	background-repeat : no-repeat;
+	background-size: 70px 100px, 420px 329px;
+	background-color : #9CCF32;
+}
+#carre3 {
+	background : url(img/2.0.png) 60px 20px,
+	url(img/eclair.png) -200px 370px;
+	background-size: 70px 100px, 500px 173px;
+	background-repeat : no-repeat;
+	
+	background-color : #E64D4F;
+}
+#carre4 {
+	background : url(img/2.2.png) 60px 20px,
+	url(img/froyo.png) -100px 300px;
+	background-repeat : no-repeat;
+	background-size: 70px 100px, 382px 273px;
+	background-color : #BA7EB1;
+}
+#carre5 {
+	background : url(img/2.3.png) 60px 20px,
+	url(img/gingerbread.png) -50px 350px;
+	background-repeat : no-repeat;
+	background-size: 70px 100px, 260px 307px;
+	background-color : #FE6567;
+}
+#carre6 {
+	background : url(img/3.0.png) 60px 20px,
+	url(img/honeycomb.png) -150px 330px;
+	background-repeat : no-repeat;
+	background-size: 70px 100px, 433px 251px;
+	background-color : #FFBF3B;
+}
+#carre7 {
+	background : url(img/4.0.png) 60px 20px,
+	url(img/icecreamsandwich.png) -150px 330px;
+	background-repeat : no-repeat;
+	background-size: 70px 100px, 437px 247px;
+	background-color : #00B0D2;
+}
+#carre8 {
+	background : url(img/4.1.png) 60px 20px,
+	url(img/jellybean.png) -380px 320px;
+	background-repeat : no-repeat;
+	background-size: 70px 100px, 501px 334px;
+	background-color : #9BD859;
+}
+#carre9 {
+	background : url(img/4.4.png) 60px 20px,
+	url(img/kitkat.png) -50px 300px;
+	background-repeat : no-repeat;
+	background-size: 70px 100px, 201px 307px;
+	background-color : #C20605;
+}
+#carre10 {
+	background : url(img/5.0.png) 60px 20px,
+	url(img/lollipop.png) -150px 250px;
+	background-repeat : no-repeat;
+	background-size: 70px 100px, 373px 556px;
+	background-color : #ED4551;
+}
+#carre11 {
+	background : url(img/6.0.png) 60px 20px,
+	url(img/marshmallow.png) -50px 250px;;
+	background-repeat : no-repeat;
+	background-size: 70px 100px, 352px 440px;
+	background-color : #F87E01;
+}
+
+#carre1:hover, #carre2:hover, #carre3:hover, #carre4:hover, #carre5:hover, #carre6:hover, #carre7:hover, #carre8:hover, #carre9:hover, #carre10:hover, #carre11:hover  {
+	flex:9;
+}
+
+.android_text {
+	width : 670px;
+	display : inline-block;
+	
+	margin-top: 20px;
+	margin-left : 200px;
+	
+	color : white;
+}
+
+#interfaceimg{
+	height:600px;
+	width:1100px;
+}

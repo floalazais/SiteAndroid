@@ -1,0 +1,21 @@
+.contenu_large_background {
+	background-position : 0 -200px;
+	background-repeat : no-repeat;
+	
+	-webkit-transition : 0.5s ease-in-out;
+	transition : 0.5s ease-in-out;
+}
+
+.contenu_large_background:hover {
+	background-position : 0 -250px;
+}
+
+#android_studio {
+	background-image : url(img/sdk.png);
+	height : 500px;
+}
+
+#doze {
+	background-image : url(img/doze.jpg);
+	height : 500px;
+}

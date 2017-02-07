@@ -1,0 +1,16 @@
+.contenu_large_background {
+	height : 500px;
+	background-image : url(img/paranoid_android.jpg);
+	background-position : 0 -200px;
+	background-repeat : no-repeat;
+	
+	-webkit-transition : 0.5s ease-in-out;
+	transition : 0.5s ease-in-out;
+}
+
+.contenu_large_background:hover {
+	background-position : 0 -250px;
+}
+strong{
+	margin-left : 30px;
+}

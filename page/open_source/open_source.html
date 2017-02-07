@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Android - Open Source</title>
+		<link rel="stylesheet" href="../../common/common_design.css" />
+		<link rel="stylesheet" href="open_source.css" />
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto' rel='stylesheet' type='text/css'>
+		<link rel="icon" href="../../common/common_img/favicon.png" />
+		
+	</head>
+	
+	<body>
+		<div id="header_background">
+			<header>
+				
+				<a href="../../index.html">
+					<img src="../../common/common_img/bugdroid_small.png" alt="bugdroid" class="android_logo" />
+					<img src="../../common/common_img/android.png" alt="android" class="android_name"/>
+				</a>	
+			
+				<nav>
+					<ol>
+						<li><span class="select"><a href="open_source.html">OPEN SOURCE</a></span></li>
+						<li><span class="notselect">•</span></li>
+						<li><span class="notselect"><a href="../caracteristique/caracteristique.html">CARACTERISTIQUES</a></span></li>
+						<li><span class="notselect">•</span></li>
+						<li><span class="notselect"><a href="../architecture/architecture.html">ARCHITECTURE</a></span></li>
+					</ol>
+				</nav>	
+				
+			</header>
+		</div>
+		
+		<div id="header_space"></div>
+		
+		<section>
+			
+			<div id="sommaire">
+				<h2>Android et l'Open Source</h2>
+				<ul class="contenu">
+					<li><a href="#licence" class="titre">Qu'est-ce qu'une licence Open Source ?</a></li>
+						<ul>
+							<li><a href="#type">Les différents types de logiciels</a></li>
+							<li><a href="#libre">Le Libre, l'Open Source, le gratuit</a></li>
+							<li><a href="#GNU">Le projet GNU Linux et les licences GNU GPL/LGPL</a></li>
+						</ul>
+					<li><a href="#android" class="titre">Le statut de la licence d'Android</a></li>
+						<ul>
+							<li><a href="#constitution">Comment est constitué Android</a></li>
+							<li><a href="#statut">Le statut des parties d'Android</a></li>
+							<li><a href="#global">Un statut pour l'OS global ?</a></li>
+						</ul>
+				</ul>
+			</div>
+			
+			<div class="anchor" id="licence"></div>
+			
+			<h2>Qu'est-ce qu'une licence Open Source ?</h2>
+			
+			<div class="anchor" id="type"></div>
+			
+			<h3>Les différents types de logiciels</h3>
+			
+			<p>
+			Avant de présenter les différents types de logiciels existants, il est nécessaire d'énoncer..</p>
+			
+			<h4>Les 4 libertés logicielles :</h4>
+			<ul>
+				<li class="point">la liberté d'exécuter le programme, pour tous les usages</li>
+				<li class="point">la liberté d'étudier le fonctionnement du programme et de l'adapter à ses besoins</li>
+				<li class="point">la liberté de redistribuer des copies du programme, ce qui implique la possibilité aussi
+				bien de donner que de vendre des copies</li>
+				<li class="point">la liberté d'améliorer le programme et de distribuer ces améliorations au public, pour en
+				faire profiter toute la communauté</li>
+			</ul>
+			
+			<p>Il existe donc plusieurs types de logiciels, du point de vue légal, qui peuvent être rangés dans 3 grandes catégories différentes, respectant plus ou moins les 4 points
+			précédemment énoncés.</p>
+			
+			<h4>Les 3 grands types de logiciels :</h4>
+			
+			<ul>
+				<li class="point"><p>Il y a tout d'abord les logiciels propriétaires, ou non-libres, qui sont des logiciels qui n'autorisent pas de manière légale, technique ou de
+				quelconque autre façon, l'exercement des 4 libertés logicielles.</p>
+				<p>Ces logiciels comportent des limitations légales, permises par le droit d'auteur et sélectionnées par le ou les ayants droits, qui sont la plupart
+				du temps encadrées par un Contrat de Licence d'Utilisateur Final (CLUF), nommé dans ce cas licence propriétaire.</p>
+				<p>Cette licence a pour but de contrôler la diffusion du logiciel licencié, afin de faciliter la vente des licences. Il faut préciser que le terme
+				"acheter un logiciel" est trompeur, puisque c'est en réalité le droit d'utilisation dans le cadre établi par la licence que l'on paye.
+				Acheter un logiciel signifie donc littéralement acheter le droit d'auteur ou le copyright associé au logiciel</p>
+				<p>La licence propriétaire ne permet donc très souvent à l'utilisateur que d'exécuter le programme pour des usages prédéfinis.</p>
+				<p>Cependant, il ne faut pas confondre logiciels propriétaires et logiciels payants, il existe en effet des logiciels non-libres dont le droit d'utilisation
+				est proposé gratuitement, ce sont les logiciels <i>freeware</i>.</p></li>
+				<li class="point"><p>Enfin, les logiciels qui respectent les 4 libertés logicielles sont appelés logiciels libres. Ces logiciels rendent l'utilisateur capable de les contrôler
+				et de les partager librement.</p>
+				<p>Ces droits peuvent être accordés simplement par le fait de l'appartenance au domaine public du programme, ou bien accordés par une licence, dîte licence libre, qui
+				est basée sur le droit d'auteur. Des licences de type <i>copyleft</i> donnent aussi ces droits aux utilisateurs, garantissant de plus ces droits pour les utilisateurs
+				des logiciels dérivés du logiciel initial.</p>
+				<p>Le mouvement du logiciel libre considère comme <i>instruments d'un pouvoir injuste</i> les logiciels non-libres, attaché à l'idée que tout logiciel doit rester accessible à tous,
+				afin que tout utilisateur doit avoir le droit d'utiliser son ordinateur comme bon lui semble. Cette idée est héritée des habitudes des acteurs du milieu de l'informatique
+				d'avant les années 1970. A cette époque, seul le matériel informatique était considéré comme un moyen de générer du contenu, le logiciel étant un moyen d'attirer le consommateur.
+				L'accès au code source de tout programme semblait donc naturel, les uniersités comme les entreprises du domaine s'échangeaient de bon coeur leurs logiciels. A cette époque, il
+				n'était pas encore clair pour tous que le droit d'auteur pouvait s'appliquer aux contenus numériques.</p>
+				<p>Mais lors des années 1970, les lois <i>antitrust</i> contraignirent les professionnels à rendre payats et propriétaires leurs logiciels, afin de permettre une concurrence entre
+				les constructeurs, et c'est ainsi que commença l'éveil des actuels géants de l'édition de logiciels, Microsoft en première ligne. Bill Gates écrivit d'ailleurs une lettre ouverte
+				aux "bricoleurs" qui continuaient de s'approprier illégalement ses logiciels, enfreignant le droit d'auteur, où il <i>leur enjoint de cesser de copier illicitement des logiciels</i>.
+				Ainsi naquit de la frustration de Richard Stallman, qui vu ainsi tous ses collègues chercheurs se tourner vers la créatio de logiciels non étudiables et partageables, le projet GNU, et
+				la Free Software Fondation, qui permit la naissance du mouvement du logiciel libre.</p></li>
+				<li class="point">D'autre part il existe des logiciels licenciés permettant l'utilisation, la copie, la distribution, la modification et la distribution de versions modifiées,
+				uniquement dans un but non-lucratif. Ce sont des logiciels semi-libres, qui permettent à n'importe qui d'utiliser le logiciel comme bon lui semble, sauf dans
+				le cas où l'utilisateur souhaite le distribuer de manière payante.
+				Ces logiciels ne sont donc ni libres ni Open Source, puisque la vente est interdite, ce qui est contraire à la 3ème liberté logicielle.</li>
+			</ul>
+			
+			<div class="contenu_centrale">
+				<span class="contenu_centrale_background">
+					<img src="img/FSF.png" alt="FSF" />
+					<br />
+					<span class="contenu_centrale_text">
+						La Free Software Foundation est à l'origine des 4 libertés logicielles<br/>et du mouvement du logiciel libre.
+					</span>
+				</span>
+			</div>
+			
+			<div class="anchor" id="libre"></div>
+			
+			<h3>Le libre, l'Open Source, le gratuit</h3>
+			
+			<p>Le terme de <i>logiciel Open Source</i> peut faire penser au terme de <i>logiciel libre</i>, cependant il existe une différence fondamentale entre ces deux types de logiciels.<br/>
+			Les logiciels Open Source doivent permettre à l'utilisateur d'avoir accès au code source, d'où le nom Open Source, l'utilisateur peut, comme pour un logiciel libre, l'utiliser comme bon lui semble,
+			modifier le code source et publier des versions modifiées au public, de manière payante ou gratuite.<br/>
+			Cependant, et c'est ce qui différencie un logiciel libre d'un logiciel Open Source, le code Open Source peut être réutilisé en toute légalité dans un logiciel qui sera, lui, propriétaire,
+			et donc n'héritera pas de la propriété Open Source du logiciel d'où provient le code réutilisé.
+			C'est cette caractéristique des logiciels Open Source qui les empêche d'être considérés comme des logiciels libres par la Free Software Foundation, et Richard Stallman, considérant que :</p>
+			<p class="citation"><i>"le mouvement du logiciel Open Source n'a pas la portée philosophique du mouvement du logiciel libre, il n'a de portée que pratique, et passe à côté des problématiques que soulèvent
+			le mouvement du logiciel libre."</i></p>
+			<p>Il existe aussi des confusions possibles avec le mouvement du logiciel libre, et la gratuité d'un logiciel. En effet, la fondation à l'origine du mouvement du logiciel libre se nomme
+			la <b>Free</b> Software Fondation, sachant que "Free" signifie gratuit en anglais, on comprend pourquoi le mouvement de l'Open Source insistent sur le terme "<b>Open</b>".</p>
+			<p>De plus lors des années 1970, avec l'action des lois antitrust sur le domaine du logiciel numérique, l'une des mesures qui a été ordonné d'être appliquée par les constructeurs est d'en plus de rendre
+			non-libres leurs logiciels, de les rendre payants. On aurait donc pu penser qu'en s'affranchissant des caractéristiques "propriétaires" des logiciels, les logiciels libres s'affranchiraient également
+			de la contrainte du logiciel "payant", mais il n'en est rien.</p>
+			<p>La notion de gratuité n'a donc aucun lien avec la notion de logiciel libre, un logiciel propriétaire pouvant être gratuit, comme les <i>freewares</i>, et un logiciel libre pouvant
+			être payant, comme indiqué à la fin de la 3ème liberté logicielle.</p>
+			
+			<div class="contenu_centrale">
+				<span class="contenu_centrale_background">
+					<img src="img/opensource.png" alt="opensource" id="opensource"/>
+					<img src="img/stallman.jpg" alt="stallman" />
+					<br />
+					<span class="contenu_centrale_text">
+						Richard Stallman, fondateur du mouvement du logiciel libre,<br/>ne considère pas les logiciels Open Source comme étant des logiciels libres.
+					</span>
+				</span>
+			</div>
+			
+			<div class="anchor" id="GNU"></div>
+			
+			<h3>Le projet GNU Linux et les licences GNU GPL/LGPL</h3>
+			
+			<p>Le projet GNU est un projet de création d'un système d'exploitation compatible avec Unix, tout en étant entièrement libre, afin de le rendre utilisable, modifiable et publiable par tous.
+			Le projet est soutenu par la Free Software Foundation, qui assure la gestion de ses droits d'auteurs, et ainsi sa protection au niveau légal. Les objectifs et la philosophie du projet
+			sont par ailleurs définis dans le manifeste GNU, lequel représente l’acte fondateur du mouvement du logiciel libre. Le projet GNU s’inscrit enfin dans une démarche sociale en privilégiant les
+			aspects philosophiques du projet plutôt que les aspects techniques.</p>
+			<p>Le projet GNU est constitué d’un ensemble de sous-projets, aussi appelés paquets GNU, qui sont tous des logiciels libres. Ces paquets GNU doivent correspondre à certains critères et respecter la
+			philosophie du logiciel libre de la FSF, ce qui assure une certaine unité et une certaine cohérence dans le projet.</p>
+			<p>Le projet GNU pris de l'ampleur puisqu'il a réunit grand nombre de membres de la communauté des <i>hackeurs</i>, suite aux appels à la contribution lancés par Richard Stallman.
+			Le noyau du projet GNU, nommé Linux, est d'ailleurs un logiciel libre sous licence GNU, développé par Linus Torvald, un étudiant finlandais, qui n'avait jusqu'alors rien à voir avec la FSF.
+			On voit donc que ce projet a le potentiel de devenir le fer de lance du mouvement du logiciel libre, un projet capable de réunir tous les partisants du mouvement sous un seul super-projet.</p>
+			<p>Des licences ont été créées lors de la mise en place du projet GNU, la licence GNU GPL et la licence GNU LGPL.</p>
+			
+			<h4>Les 2 licences GNU :</h4>
+			<ul>
+				<li class="point">La licence GNU GPL fixe les conditions légales de distribution des logiciels libres du projet GNU. Cette licence a depuis été adoptée, en tant que document définissant le mode
+				d'utilisation, donc d'usage et de diffusion, par de nombreux auteurs de logiciels libres, en dehors des projets GNU. Le but de Stallman était de produire une licence unique qui pourra être utilisée
+				pour chaque projet et que cette licence permette au plus grand nombre de projets de partager leur code source.<br/>
+				La GPL met en œuvre la notion de copyleft, qui s'appuie sur la notion de copyright, ainsi le copyleft comme le copyright définissent et encadrent les droits des utilisateurs de façon contraignante.
+				Le mécanisme est identique, mais les objectifs diffèrent : le copyright garantit exclusivement les droits de l'auteur, le copyleft s'attarde tout particulièrement aux droits des utilisateurs,
+				et vise à préserver la liberté d'utiliser, d'étudier, de modifier et de diffuser le logiciel et ses versions dérivées. Le copyleft permet donc à n'importe qui de faire ce qu'il souhaite d'un boût de code
+				licencié, <b>à condition qu'il publie les modifications qu'il a opérées sur le code source utilisé</b>.<br/>
+				La GPL est la licence de logiciel libre la plus utilisée. En avril 2004, 74,6 % des 23 479 projets libres listés sur le site Freshmeat et 68,5 % des 52 183 projets libres listés sur SourceForge.net étaient
+				publiés sous licence GPL. Nul ne conteste depuis longtemps que de nombreux utilisateurs emploient une quantité croissante de logiciels diffusés sous GPL.
+				Une des caractéristiques principales de cette licence est la clause quand à l'hérédité de la licence du code licencié GNU GPL. En clair, si l'on réutilise du code licencié GNU GPL dans un logiciel,
+				nous serons désormais contraints de faire licencier le logiciel ainsi développé sous licence GNU GPL. C'est cette caractéristique en particulier qui va conduire à la création de la seconde licence GNU.</li>
+				<li class="point">La licence GNU LGPL possède de très nombreuses ressemblances avec la licence GNU GPL. La principale caractéristique de cette licence est que l'on peut lier du code licencié GNU LGPL
+				avec du code non licencié GNU LGPL. Ce qui permet de s'affranchir du caractère héréditaire de la licence GNU GPL, et plus précisement de s'affranchir de la clause de copyleft de la licence GNU GPL.
+				Ainsi, il devient possible à un programmeur désireux de faire un logiciel propriétaire, d'utiliser certains logiciels sous licence libre.</li>
+			</ul>
+			
+			
+			<div class="contenu_centrale">
+				<span class="contenu_centrale_background">
+					<img src="img/gnulgpl.png" alt="GNU" class="GNU"/>
+					<img src="img/linux.png" alt="GNU" id="linux" />
+					<img src="img/gnugpl.png" alt="GNU" class="GNU"/>
+					<br />
+					<span class="contenu_centrale_text">
+						Le projet GNU Linux, porte étendard du mouvement du logiciel libre,<br/>et les 2 licences issues de ce projet : GNU GPL et GNU LGPL.
+					</span>
+				</span>
+			</div>
+			
+			<div class="anchor" id="android"></div>
+			
+			<h2>Le statut de la licence d'Android</h2>
+			
+			<div class="anchor" id="constitution"></div>
+			
+			<h3>Comment est constitué Android</h3>
+			
+			<p>Le système d'exploitation Android est constitué de beaucoup de composants différents. On considère souvent à tort qu'"Android est une version modifiée de Linux",
+			ou qu'"Android est composé de GNU". En réalité il faut se tourner à nouveau vers ce qu'est le projet GNU pour comprendre pourquoi ces affirmations sont fausses.<br/>
+			Le projet GNU est un projet de système d'exploitation, qui est basé sur le noyau Linux. GNU est donc composé d'un noyau Linux.<br/>
+			Android est lui aussi un système d'exploitation qui est basé sur le noyau Linux. Il n'a donc aucun lien avec le projet GNU, la seule chose qu'ils ont en commun
+			étant leur noyau Linux. Ainsi, dire qu'"Android est composé de GNU" n'a pas vraiment de sens. Dire qu'"Android est une version modifiée de Linux" n'a pas plus
+			de sens, puisqu'Android est un OS seulement basé sur le noyau Linux, on compare donc un OS et un noyau.</p>
+			
+			<p>Une fois ces doutes dissipés, nous pouvons donc décomposer Android sans risquer de confondre GNU, Linux et Android :</p>
+			
+			<h4>La composants d'Android :</h4>
+			
+			<ul>
+				<li class="point">Le noyau Linux, comme nous l'avons vu, est le composant le plus bas niveau d'Android, c'est celui qui fait le lien entre le <i>hardware</i> et le <i>software</i>.</li>
+				<li class="point">Android est aussi composé de différentes bibliothèques, telles qu'OpenGL, WebKit ou libc.</li>
+				<li class="point">L'OS comporte de plus une Machine Virtuelle Dalvik, qui comme vu précedemment, transforme le bytecode compilé en instructions pour le processeur.</i>
+				<li class="point">D'une autre part, Android se voit accompagné d'applications telles que Contacts, ou Téléphone, qui sont intégrées à Android,et lui sont indissociable.</li>
+				<li class="point">Enfin , Android dispose aussi des applications Google, les GoogleApps. Ce sont les applications comme PlayStore, PlayMusique ou PlayJeux, qui participent à
+				<i>immerger l'utilisateur dans la Google experience</i>.</li>
+			</ul>
+			
+			<div class="contenu_centrale">
+				<span class="contenu_centrale_background">
+					<img src="img/noyau.jpg" alt="noyau" id="noyau"/>
+					<img src="img/opengl.png" alt="opengl" id="opengl"/>
+					<img src="img/gapps.jpg" alt="gapps" id="gapps" />
+					<br />
+					<span class="contenu_centrale_text">
+						Différentes parties d'Android
+					</span>
+				</span>
+			</div>
+			
+			<div class="anchor" id="statut"></div>
+			
+			<h3>Le statut des parties d'Android</h3>
+			
+			<p>Nous avons pu voir qu'Android est composé d'une multitude de constituants. Le problème étant que pour connaître le statut d'Android,
+			pour savoir s'il peut être considéré comme libre ou OpenSource, il faut déterminer au cas par cas le statut des différentes parties de l'OS.</p>
+			
+			<h4>Les différents statuts</h4>
+			
+			<ul>
+				<li class="point">Tout d'abord nous pouvons étudier le statut exact du noyau Linux utilisé par le système d'exploitation Android.<br/>
+				La version de Linux incluse dans Android n'est pas un logiciel entièrement libre puisque, tout comme la version de Torvalds
+				de Linux, elle contient des morceaux de code binaire non libres dont quelques-uns sont effectivement utilisés dans des appareils tournant sous Android.
+				À l'intérieur d'Android, le noyau Linux reste un programme séparé dont le code source est sous licence GNU GPL version 2. Cette licence oblige donc Google
+				à publier librement le code en rapport avec l'utilisation du noyau Linux, ce qui a été fait, comme lorsque par exemple lorsque Google a partagé du code concernant
+				la gestion de la batterie.
+				Cependant le fait que le noyau Linux soit complètement à part du reste de l'OS empêche le caractère héréditaire de la licence GNU GPL de faire effet sur le reste d'Android.
+				Le reste du code est sous licence Apache, une licence libre qui fonctionne de manière analogue à la licence GNU LGPL. Un code licencié Apache
+				peut être réutilisé de manière propriétaire. C'est cette caractéristique qui a attiré les constructeurs, puisque qu'elle leur permet de créer des ROMs d'Android customisées,
+				et qui restent non-libres, ce qui permet une concurrence entre les différents constructeurs.</li>
+				<li class="point">D'autre part les pateformes Android utilisent des <i>firmwares</i> se servant de bibliothèques non-libres, le statut des licences des biblothèques utilisées
+				par Android est donc hétérogène, ce qui fait que l'ensemble des biblothèques d'Android n'est pas libre. Les bibliothèques d'Android ne sont donc pas
+				obligées de respecter le fait de publier la totalité du code source. Les bibliothèques ne peuvent donc pas non plus être considérées comme OpenSource.</li>
+				<li class="point">Les applications intégrées à toute version d'Android comme Téléphone ou Contacts sont totalement libres, cependant depuis ces dernières années
+				une tendance à remplacer ces applications libres par des applications propriétaires. De plus, toutes les ROMs customisées par les constructeurs comme Samsung ou LG
+				contiennent généralement des versions personnalisées de ces applications, lorsque ce ne sont pas des applications entièrement conçues par les constructeurs
+				qui remplacent ces applications libres. Malgré ceci, les applications officiellement intégrées à Android restent libres, et donc OpenSource.</li>
+				<li class="point">Enfin, les GoogleApps, et en particulier PlayStore, participant à la <i>Google Experience</i>, sont totalement propriétaires. Ce qui est très génant pour la
+				communauté du logiciel libre, puisque c'est avec PlayStore que Google gère et entretient son système d'exploitation. Il n'y a donc pas de moyen
+				de savoir ce que font les GoogleApps sur la plateforme Android, puisque le fait que ces applications soient propriétaires rend le caractère OpenSource totalement inexistant.</li>
+			</ul>
+			
+			<div class="contenu_centrale">
+				<span class="contenu_centrale_background">
+					<img src="img/gpl.png" alt="gpl" />
+					<br />
+					<span class="contenu_centrale_text">
+						Différentes licences dans un même système d'exploitation
+					</span>
+				</span>
+			</div>
+			
+			<div class="anchor" id="global"></div>
+			
+			<h3>Un statut pour l'OS global ?</h3>
+			
+			<p>En combinant toutes les différentes parties précedemment étudiées, nous formons un ensemble appelé Android Stock. C'est la distribution officielle d'Android,
+			et tout OS voulant se nommer Android doit se baser sur cette distribution.
+			La principale partie d'Android est donc OpenSource, entre le noyau, certaines bibliothèques, et les applications intégrées.
+			Cependant il reste des bibliothèques, et les GoogleApps, qui sont non-libres ou propriétaires, et qui ne peuvent pas être considérées comme OpenSource.</p>
+			
+			<p><b>Le système d'exploitation <b>Android ne peut donc pas être considéré comme un système d'exploitation totalement libre</b>, et donc par la même occasion OpenSource</b>.</p>
+			
+			<p>Si un utilisateur souhaite se tourner vers un système d'exploitation pour mobile, il peut s'intéresser aux OS basés sur l'AOSP, l'Android Open Source Project.
+			L'AOSP est une version d'Android sans les éléments propriétaires, elle ne comporte donc naturellement pas les GoogleApps, ni les bibliothèques non-libres utilisées par
+			Android Stock. Même les parties du noyau Linux étant non-libres, qui étaient des drivers, ont été retirées, mais cela se traduit par un nombre de modèles de plateformes
+			compatibles très faible. Pour tenter de contrer cette abscence de drivers, il y a la possibillité de tenter de <i>reverse-engineering</i> des drivers déjà existants,
+			mais cela amène souvent une baisse de performances et une faible stabilité par rapport aux ROMs officielles Android.</p>
+			
+			<p>Il est nécessaire d'indiquer que les ROMs basées sur l'AOSP ne sont pas basées sur l'Android Stock, il est donc impossible aux créateurs d'OS libres de les nommer
+			"Android". Les OS <b>cyanogenmod</b> et <b>Replicant</b> sont des exemples de ce type de systèmes d'exploitation libres.</p>
+			
+			<div class="contenu_centrale">
+				<span class="contenu_centrale_background">
+					<img src="img/oxygen_os.png" alt="cyanogenmode" id="oxygenmod" />
+					<img src="img/cyanogenmod.png" alt="cyanogenmode" id="cyanogenmod" />
+					<img src="img/AOSP.jpg" alt="aosp" />
+					<br />
+					<span class="contenu_centrale_text">
+						Les principales alternatives OpenSource d'Android,<br/>basées sur l'AOSP.
+					</span>
+				</span>
+			</div>
+			
+		</section>
+		
+		<div id="background_footer">
+			
+			<footer>
+				<div class="dalle"><a href="../a_propos/a_propos.html">A propos du projet</a></div>
+				<div class="dalle">•</div>
+				<div class="dalle"><a href="../contact/contact.html">Contact</a></div>
+				<div class="dalle">•</div>
+				<div class="dalle"><a href="#">Haut de la page</a></div>
+				<div id="footer_logo"><a href="http://iut.univ-amu.fr/sites/arles"><img src="../../common/common_img/google.png"></a></div>
+			</footer>
+			
+		</div>
+	
+	</body>
+
+</html>

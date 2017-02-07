@@ -1,0 +1,59 @@
+#background_membre {
+	margin : auto;
+	width : 600px;
+	
+	padding-top : 10px;
+	padding-bottom : 10px;
+	
+	text-align : center;
+	background-color : #e6e6e6;
+}
+
+.name_membre {
+	display : inline-block;
+	text-align : center;
+	padding:5px;
+}
+
+.name_membre_jl {
+	display : inline-block;
+	text-align : center;
+	margin-left:50px;
+	margin-right:50px;
+	padding:5px;
+}
+
+h4{
+	margin-bottom:-15px;
+}
+
+.membre {
+	height : 100px;
+	width : 100px;
+	
+	margin:auto;
+	
+	text-align : center;
+
+	border-radius : 50%;
+	
+	-webkit-transition : 0.2s ease-in-out;
+	transition : 0.2s ease-in-out;
+}
+
+#membre1 {
+	background-image : url(img/florian.jpg);
+}
+
+#membre2 {
+	background-image : url(img/jean_loup.jpg);
+}
+
+#membre3 {
+	background-image : url(img/fritz.jpg);
+}
+
+
+.membre:hover {
+	transform: scale(1.1);
+}

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Android - Architecture</title>
+		<link rel="stylesheet" href="../../common/common_design.css" />
+		<link rel="stylesheet" href="architecture.css" />
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto' rel='stylesheet' type='text/css'>
+		<link rel="icon" href="../../common/common_img/favicon.png" />
+		
+	</head>
+	
+	<body>
+		<div id="header_background">
+			<header>
+				
+				<a href="../../index.html">
+					<img src="../../common/common_img/bugdroid_small.png" alt="bugdroid" class="android_logo" />
+					<img src="../../common/common_img/android.png" alt="android" class="android_name"/>
+				</a>	
+			
+				<nav>
+					<ol>
+						<li><span class="notselect"><a href="../open_source/open_source.html">OPEN SOURCE</a></span></li>
+						<li><span class="notselect">•</span></li>
+						<li><span class="notselect"><a href="../caracteristique/caracteristique.html">CARACTERISTIQUES</a></span></li>
+						<li><span class="notselect">•</span></li>
+						<li><span class="select"><a href="architecture.html">ARCHITECTURE</a></span></li>
+					</ol>
+				</nav>	
+				
+			</header>
+		</div>
+		
+		<div id="header_space"></div>
+		
+		<section>
+			
+			<div id="sommaire">
+				<h2>Architecture du système</h2>
+				<ul class="contenu">
+					<li><a href="#linux" class="titre">Android et le noyau Linux</a></li>
+						<ul>
+							<li><a href="#materiel">Gestion du matériel</a></li>
+							<li><a href="#memoire">Gestion de la mémoire</a></li>
+							<li><a href="#alimentation">Gestion de l'alimentation</a></li>
+						</ul>
+					<li><a href="#app" class="titre">L’exécution d’application sur Android</a></li>
+						<ul>
+							<li><a href="#java">Android et Java</a></li>
+							<li><a href="#dalvik">Dalvik</a></li>
+							<li><a href="#art">Android Runtime (ART)</a></li>
+						</ul>
+					<li><a href="#framework" class="titre">Application Framework</a></li>
+						<ul>
+							<li><a href="#def">Définition de l'Application Framework</a></li>
+							<li><a href="#core">Core Plateform Services</a></li>
+							<li><a href="#hardware">Hardware Services</a></li>
+						</ul>
+				</ul>
+			</div>
+			
+			<div class="anchor" id="linux"></div>
+			<h2>Android et le noyau Linux</h2>
+			
+			<p>Un noyau de système d’exploitation (appelé “kernel” en anglais) est une des parties fondamentales d’un système d’exploitation. Il gère les ressources de l’appareil  et permet à ses 
+			différents composants de communiquer entre eux. Ainsi, le rôle du noyau est de faire le lien entre le matériel et le logiciel.</p>
+			
+			<p>Android utilise le noyau Linux, un logiciel libre crée par Linus Torvalds en 1991 et développé  par des milliers de bénévoles et salarié du monde entier. La version du noyau utilisé par 
+			Android a subit quelques modifications de la part de Google concernant la sécurité ou la gestion de la mémoire.</p>
+			
+			<div class="anchor" id="materiel"></div>
+			<h3>Gestion du matériel</h3>
+			
+			<p>La gestion du matériel se fait par l’intermédiaire de pilote de périphérique. Un pilote (aussi appelé “driver”) est un programme dédié à un matériel donné permettant aux autres programmes 
+			d’accéder et de communiquer avec ce matériel par le bias d’appel système, coûteux en temps. Afin de réduire le temps d’appel pour accéder aux périphériques, les pilotes les plus fréquemment 
+			utilisé sont généralement inclus directement dans l’espace noyau sous la forme de module.</p>
+			
+			<p>Pour faciliter l’utilisation du système d’exploitation sur différents appareils, Android fournit une couche d’abstraction matérielle (abrégé HAL pour “Hardware Abstraction Layer”) qui se 
+			charge de standardiser les appels aux différentes parties de l’appareil. Par exemple, allumer l’écran du téléphone se fera via le biais d’une unique fonction et le HAL se chargera d’utiliser 
+			l’appel adapté selon le matériel embarqué. Ainsi, les applications pourront utiliser indifféremment différents types d’écran, sans que l’application soit explicitement prévu pour. 
+			Cela facilite grandement le travail des développeurs et permet au système Android d’être compatible avec un grand nombre d’appareils différents.</p>
+
+
+			<div class="contenu_centrale">
+				<span class="contenu_centrale_background">
+					<img src="img/architecture_android.png" alt="L'architecture d'Android" />
+					<br />
+					<span class="contenu_centrale_text">
+						L'architecture d'Android
+					</span>
+				</span>
+			</div>
+			
+			<p>Pour porter Android sur leurs appareils, les constructeurs doivent programmer et implémenter dans le noyau un driver pour chaque périphérique (puce wifi, gyroscope, capteur de proximité etc) 
+			et adapter la couche d’abstraction pour que les applications et le système puissent correctement utiliser l’appareil.<br />
+			Ces drivers sont généralement propriétaires ce qui rend difficile le portage d’autres système d’exploitation ou rom Android sur l’appareil. Les développeurs doivent soit extraire les drivers de la rom 
+			pour les réutilliser soit de pratiquer du reverse engineering entrainant généralement des performances réduites et des bug.</p>
+
+			<p>Les périphériques des téléphones et tablettes étant fixes, le noyau n’a pas à déterminer quel module charger au lancement du système Android. Cependant, Google compte changer ce comportement avec l’arrivé 
+			prochaine du projet Ara. Le but du projet Ara est de créer un téléphone totalement modulaire où les différents composants du téléphone (écran, caméra, batterie, processeur...) sont interchangables et facilement remplaçables.</p>
+
+			<div class="contenu_centrale">
+				<span class="contenu_centrale_background">
+					<iframe width="853" height="480" src="https://www.youtube.com/embed/intua_p4kE0?rel=0" frameborder="0" allowfullscreen></iframe>
+					<br />
+					<span class="contenu_centrale_text">
+						Le projet Ara, un téléphone totalement modulaire.
+					</span>
+				</span>
+			</div>
+			
+			<div class="anchor" id="memoire"></div>
+			<h3>Gestion de la mémoire</h3>
+			
+			<p>Android a souvent été critiqué pour sa mauvaise gestion de la mémoire. En effet, si les iPhone et les Windows Phone se contente parfaitement de 1 Go de mémoire vive, il n’est plus rare de trouver des 
+			téléphone Android à 3 Go.</p>
+			
+			<p>Le principal fautif dans cette surconsommation de mémoire est le processus de ramasse-miette (appelé aussi Garbage Collector en anglais). Le ramasse-miette est un sous-système chargé de recycler 
+			la mémoire préalablement allouée puis inutilisée ce qui permet au développeur de ne pas à avoir à s’en préoccuper, la gestion manuelle de la mémoire étant l’une des sources les plus courantes d’erreur. 
+			Malheureusement, ce procédé à tendance à utiliser plus de mémoire qu’un programme gérer manuellement. Pire encore, à la fermeture d’une application, ce processus nécessite de 4 à 8 fois le volume de 
+			mémoire monopolisé par l’application. Et quand la mémoire disponible vient à manquer, les performances sont sévèrement dégradées.</p>
+			
+			<p>Google sait que le marché émergeant est un marché à très fort potentiel et compte bien s’y implanter. Mais qui dit marché émergeant dit matériels souvent obsolète et la firme de Mountain View est 
+			obligé de réduire l’exigence matériel de son OS pour l’imposer.<br />
+			Ainsi, Google introduit avec Android 4.4 le projet Svelte dont le but est de faire fonctionner le système sur des téléphones peu performant avec 512 mo de ram. Pour ce faire, les ingénieurs ont reçu 
+			un Nexus 5 bridé (mémoire réduit à 512 mo, résolution bloqué en 960 X 540, 2 cœurs du processeur désactivés avec une vitesse d’horloge réduite) avec pour consigne d’y faire tourner Android de façon 
+			satisfaisante. Ils ont ainsi réduit la mémoire occupée par le système, et par les applications, mieux gérer les crash d’app en cas de manque de mémoire et fourni de meilleurs outils aux développeurs 
+			pour qu’ils puissent voir comment réagit leur programme dans des conditions difficiles afin de les optimiser.</p>
+			
+			<div class="anchor" id="alimentation"></div>
+			<h3>Gestion de l'alimentation</h3>
+			
+			<p>Android tournant principalement sur des appareils mobiles, la gestion de l’autonomie est une préoccupation constante. En effet, la batterie est une des principales sources de plainte de la part des utilisateurs 
+			et sa taille physique est de plus en plus réduite avec la course à la finesse menée par les constructeurs. Ainsi Google a présenté aux Google I/O 2014 son projet Volta destiné à améliorer l’autonomie d’Android 5.0 
+			de trois façon différentes :</p>
+			
+			<ul>
+				<li>Proposer aux développeurs des outils puissants pour mesurer l’efficacité de leurs applications. Ainsi, Google a développé une chronologie visuelle appelée « Historique de la batterie ». 
+				Cet outil permet de mesurer avec précision l’endurance de la batterie, voir à quel moment est-elle le plus sollicité, en utilisant quelles applications ou périphériques en particulier etc ... 
+				Ces informations permettent ainsi aux développeurs d’optimiser leurs applications et de déceler et corriger facilement les bugs entrainants une utilisation abusive de l’appareil et donc de la batterie.<br />
+				Google améliore aussi avec Android 5 la visualisation de la consommation d’énergie coté utilisateur. Ainsi ce dernier peut plus facilement comprendre l’influence des périphériques et des applications 
+				dans la durée de vie de sa batterie et constater par eux même une consommation anormale d’énergie (par exemple, les synchronisations incessantes de Facabook, la luminosité de l’écran, la puce wifi…). 
+				Google espère ainsi faire pression sur les développeurs d’application mal optimisé car les utilisateurs risquent de se détourner d’une app trop énergivore.</li>
+				
+				<li>Avec la nouvelle API JobScheduler, Android peur regrouper les requête CPU non-urgente pour réveiller moins souvent le processeur et réduire à terme la consommation énergique. L’appareil est 
+				ainsi endormi plus souvent et attend d’être en charge pour lancer des tâches de maintenance.</li>
+				
+				<li>Enfin, Google propose un mode d’économie d’énergie. Ce dernier désactive les animations du système pour ne pas solliciter l’appareil inutilement, réduit la fréquence du processeur et de 
+				l’écran, désactive les réseaux mobiles quand le téléphone est en veille, empêche les applications de se synchroniser trop régulièrement etc…  Google affirme qu’un tel mode offrirait 90 minutes 
+				supplémentaires d’autonomie sur un Nexus 5 à 20%.</li>
+			</ul>
+				
+				<p>Pour tester l’efficacité de ces nouvelles optimisations, le site Ars Technica a comparé l’autonomie de deux Nexus 5, l’un sur Android 4.4 et l’autre sur Android L, la version de développement 
+				d’Android 5.0 Lollipop. Les téléphone devaient rafraichir une page web avec l’écran allumé en permanence et le mode d’économie d’énergie désactivé.<br />
+				Sur Android 4.4, le Nexus 5 tient 345 minutes contre 471 minutes sur Android 5 soit une amélioration de 36% correspondant à 126 minutes supplémentaire d’autonomie.</p>
+
+				<div class="contenu_centrale">
+					<span class="contenu_centrale_background">
+						<img src="img/test_batterie.jpg" alt="L'architecture d'Android" />
+						<br />
+						<span class="contenu_centrale_text">
+							Le test de Ars Technica permet de montrer les progrès réalisés par les ingénieurs de Google sur Android L 
+						</span>
+					</span>
+				</div>
+				
+				
+				<p>Google a continué ses travaux sur l’autonomie avec Android 6.0 Mashmallow en y intégrant Doze et App Standby.</p>
+				
+				<p>Doze se concentre sur l’amélioration de l’autonomie des appareil Android en veille, un domaine où iOS possède un avantage certain. Avec Android 6.0, le système va régulièrement vérifier avec 
+				l’accéléromètre si l’appareil a était laissé immobile et n’a pas été consulté depuis un moment. Doze va ensuite progressivement geler les applications les moins importantes, les empêcher 
+				de se synchroniser et restreindre l’accès au réseau a part en cas d’évènement important comme un nouveau message par exemple. Selon le site Computerworld, ces mesures augmentent par 2,6 
+				l’autonomie d’un Nexus 5 en veille.</p>
+				
+				<p>App Standby quant à lui cherche à limiter l’impact des applications peu utilisé sur la batterie. Si l’utilisateur n’interagit pas avec une application pendant plusieurs jours, cette dernière 
+				ne pourra avoir accès au réseau qu'une fois par. Elle pourra cependant reprendre un fonctionnement normal si l’appareil est connecté au secteur ou si l’utilisateur choisi de l’utiliser de nouveau.</p>
+				
+				<p>L’utilisateur pourra cependant marquer manuellement via les paramètres d’Android des applications comme « prioritaires » qui ne seront pas affecté par les mesures de Doze ou App Standby.</p>
+			
+			
+			
+			<div class="anchor" id="app"></div>
+			<h2>L’exécution d’application sur Android</h2>	
+			
+			<div class="anchor" id="java"></div>
+			<h3>Android et Java</h3>
+			
+			<p>La majorité des applications pour Android sont développé en Java, un langage de programmation orienté objet utilisant une machine virtuelle dont le fonctionnement est décrit plus bas.</p>
+			
+			<p>Ce langage a été choisi par Google pour sa simplicité : la gestion de la mémoire étant en partie géré par un ramasse miette, le nombre d’erreurs lié à une mauvaise gestion de la mémoire est fortement 
+			réduite.  De plus, Java est un langage de programmation très utilisé dans le monde, notamment sur mobile avec la Java platform Micro Edition (anciennement appelé J2ME), à l’époque très utilisé dans les 
+			applications embarquées tel que les téléphone mobile, l’électroménager ou les platine DVD. Le fait que le code Java soit très facilement portable était un atout pour Android, censé supporté une large 
+			gamme d’appareil aux spécificités différentes. Pour finir, de nombreux outils de développement très complet existent déjà pour Java ce qui permet à Google de les adapter pour Android et gagner du temps.</p>
+		
+			<p>Le développement d'applications pour Android s'effectue avec un ordinateur sous Windows, Mac OS X ou Linux en utilisant le JDK (Le Java Development Kit) de la plate-forme Java et des outils pour Android. 
+			Google fournit des outils permettant de manipuler le téléphone ou la tablette, de le simuler à l'aide d'une machine virtuelle, de créer des fichiers APK (les fichiers de paquet d'Android qui contient l'application créée), de déboguer 
+			les applications et d'y ajouter une signature numérique pour prouver son authenticité. Ces outils sont mis à disposition sous la forme d'un plugin pour l'environnement de développement Eclipse ou via l'environnement de développement Android Studio.</p>
+			
+			
+		</section>
+		
+			<div class="contenu_large_background" id="android_studio">
+				<div class="contenu_large_background">
+				</div>
+			</div>
+			<div class="contenu_large_texte_background">
+				<div class="contenu_large_texte">
+					<p><a href="http://developer.android.com/index.html" />Android Studio</a> est un environment de développement destiné à remplacer Eclipse pour Android annoncé pendant le Google I/O 2013</p>
+				</div>
+			</div>
+			
+		<section>	
+			
+			<p>Même si Java est majoritaire dans le développement Android, il est tout à fait possible de créer des applications en C ou C++ avec le NDK (Native Developpement Kit) pour des usages lourds
+			comme les jeux ou les benchmarks<br />
+			Google tente aussi de mettre en avant Dart, son langage de programmation web destiné à remplacer Javascript. Ce dernier offrirait des performances bien meilleurs que Java pour les applications 
+			Android et viserait un rafraîchissement de 120 fps contre 60 traditionnellement.</p>
+			
+			
+			<div class="anchor" id="dalvik"></div>
+			<h3>Dalvik</h3>
+			
+			<p>Les applications codé en Java sont traditionellement exécutés par la machine virtuelle Java. Une machine virtuelle est un programme informatique fictif qui exécute des programmes compilé 
+			sous une forme spécifique, le bytecode Java, et exécute ses instructions selon le système sur lequel il est installé. Ainsi, un programme peut fonctionner indifféremment de l’architecture du 
+			système sur lequel il est exécuté du moment que la machine virtuelle y est installée.<br />
+			Un programme est donc programmé en Java puis transformé en bytecode Java par le compilateur. Ce bytecode n’est pas un code machine et n’est pas directement exécutable, il s’agit d’une étape 
+			intermédiaire. Un fois le programme exécuté, la machine virtuelle va compiler à la volée le bytecode en code machine natif. On parle alors de compilation à la volée 
+			(just-in-time-compilation ou JIT compilation en anglais). Même si la compilation à la volée reste plus rapide que l’interprétation, l’impact sur les performances reste néanmoins non négligable 
+			par rapport à un programme natif c’est à dire un programme composé d’instructions directement reconnues par un processeur.</p>
+
+			<p>Pour Android, Google a décidé de créer Dalvik, une machine virtuelle spécialement optimisé pour les appareils mobile car ils possèdent de faibles capacités de calcul et peu d’espace mémoire. 
+			Pour ce faire, Dalvik utilise un bytecode différents dont les instructions sont basées sur des registres contrairement à celui de la machine virtuelle Java basées sur la pile. En effet, 
+			une machine à registres nécessite moins d’instructions pour effectuer la même opération. En raison de ces différences, Dalvik est incapable d’utiliser directement le bytecode Java et les 
+			convertir en bytecode Dalvik appelé DEX pour Dalvik EXecutable.</p>
+
+			<div class="contenu_centrale">
+				<span class="contenu_centrale_background">
+					<img src="img/compilation.png" alt="compilation" />
+					<br />
+					<span class="contenu_centrale_text">
+						Le moteur d'exécution d'Android
+					</span>
+				</span>
+			</div>
+
+			<div class="anchor" id="art"></div>
+			<h3>Android Runtime (ART)</h3>
+	
+			<p>Pour améliorer les performances des applications, Google développe une nouvelle machine virtuelle pour Android : l’Android Runtime ou ART. D’abord introduit dans Android 4.4 KitKat en octobre 2013 
+			dans une version de test accessible dans les options pour les développeurs, ART remplace complétement Dalvik dans la version suivante, Android 5.0 Lollipop, sortit un an plus tard.</p>
+
+			<p>Contrairement à Dalvik, ART utilise la compilation anticipée (abrégé AOT pour ahead-of-time). Le programme est compilé en language machine avant l’exécution contrairement à la compilation JIT effectué 
+			lors de l’exécution du programme. Les applications sont donc compilés à l’installation, qui prend plus de temps qu’avec Dalvik, et prennent un peu plus de place. Cette étape supplémentaire permet 
+			cependant d’améliorer drastiquement les performances des applications : elles se lancent et fonctionnent plus vite, gèrent mieux la mémoire et usent moins vite la batterie.</p>
+
+			<p>Pour être plus facilement rétrocompatible avec les anciennes applications, ART utilise le même type de bytecode que Dalvik.</p>
+
+			
+			<div class="contenu_centrale">
+				<span class="contenu_centrale_background">
+					<img src="img/art.jpg" alt="art" />
+					<br />
+					<span class="contenu_centrale_text">
+						Avec ART, les applications prennent plus de place (+20 %),<br />
+						mais les gains en performance et en autonomie des batteries sont conséquents (+20 à 30 %)
+					</span>
+				</span>
+			</div>
+			
+			<div class="anchor" id="framework"></div>
+			<h2>Application Framework</h2>
+			
+			<div class="contenu_centrale">
+				<span class="contenu_centrale_background">
+					<img src="img/android_architecture_2.png" alt="L'architecture d'Android" />
+					<br />
+					<span class="contenu_centrale_text">
+						
+					</span>
+				</span>
+			</div>
+			
+			<div class="anchor" id="def"></div>
+			<h3>Définition de l'Application Framework</h3>
+			
+			<p>Un framework est un ensemble de composant logiciel qui permet de créer les fondations d’un programme. Contrairement à une bibliothèque, très spécialisé, un framework peut être constitué de 
+			plusieurs bibliotèquess. De plus, le framework impose aux développeurs une certaine construction de son programme.</p>
+
+			<p>Une interface de programmation (souvent appelé API pour Application Programming Interface) est un ensemble de classes et de fonctions qui sert de façade par laquelle un logicel offres ses 
+			service à d’autre logiciel.</p>
+
+			<p>L’Application Framework d’Android contient un ensemble de service, c’est à dire une application tournant en permanence en tache de fond et pouvant être appelé par les applications.</p>
+			<p>On distingue les Core Plateform Services, services logiciel essentiels au fonctionnement d’Android, et les Hardware services, fournissant un accès aux périphériques de l’appareil.</p>
+
+			
+			<div class="anchor" id="core"></div>
+			<h3>Core Plateform Services</h3>
+			
+			<strong>Activity Manager : </strong>l’API qui gère le cycle de vie des applications et les organise en pile selon leurs états 
+
+			<ul>
+				<li><strong>Active : </strong>app consulté par l’utilisateur</li>
+				<li><strong>Paused : </strong>une app tourne au-dessus de l’app en pause, l’utilisateur n’agit plus dessus mais elle peut récupérer le focus ultérieurement.</li>
+				<li><strong>Stopped : </strong>l’app est en pause, n’est plus visible et l’utilisateur ne peut plus interagir avec. Le système la maintient dans cette état pour la reprendre plus tard. Si la mémoire vive venait à 
+					manquer, l’app pourrait être tué pour gagner de la place.</li>
+			</ul>
+			
+			<p><strong>Package manager : </strong>gère les fichiers .APK (Android Package Manager) permettant d’installer des applications.</p>
+			
+			<p><strong>Windows Manager : </strong>gère les fenêtres des applications et les dessiner sur le buffer de l’écran.</p>
+			
+			<p><strong>View Système : </strong>fournit des composants graphiques pour les applications (listes, boutons, menus, grilles etc…).</p>
+			
+			<p><strong>Content Provider : </strong>Gère le partage de données entre applications comme par exemple les contacts ou les SMS.</p>
+			
+			<div class="anchor" id="hardware"></div>
+			<h3>Hardware Services</h3>
+			
+			<p><strong>Telephony Service : </strong>permet aux programmes d’accéder au fonctions téléphoniques de l’appareil (appel, sms, 3G...).</p>
+
+			<p><strong>Location Service : </strong>permet d’accéder au GPS de l’appareil.</p>
+
+			<p><strong>Bluetooth Service : </strong>permet d’accéder à la puce Bluetooth de l’apareil.</p>
+
+			<p><strong>Wifi Service : </strong>permet d’accéder à l’interface Wifi.</p>
+
+			<p><strong>USB Service : </strong>permet d’accéder à l’interface USB</p>
+
+			<p><strong>Sensor Service : </strong>permet d’accéder aux différents capteurs de l’appareil (capteur de proximité, accéléromètre, détecteur de luminosité...).</p>
+
+
+		</section>
+		
+		<div id="background_footer">
+			
+			<footer>
+				<div class="dalle"><a href="../a_propos/a_propos.html">A propos du projet</a></div>
+				<div class="dalle">•</div>
+				<div class="dalle"><a href="../contact/contact.html">Contact</a></div>
+				<div class="dalle">•</div>
+				<div class="dalle"><a href="#">Haut de la page</a></div>
+				<div id="footer_logo"><a href="http://iut.univ-amu.fr/sites/arles"><img src="../../common/common_img/google.png"></a></div>
+			</footer>
+			
+		</div>
+	
+	</body>
+
+</html>
